@@ -34,17 +34,17 @@ def main(args):
         parser.print_usage()
         sys.exit(1)
         return
-
     text = ns.text
+    final_text = text
     # print(str(text))
     if ns.upper:
-        print(text.upper())
-    elif ns.lower:
-        print(text.lower())
-    elif ns.title:
-        print(text.title())
-    else:
-        print(text)
+        final_text = text.upper()
+    if ns.lower:
+        final_text = text.lower()
+    if ns.title:
+        final_text = text.title()
+
+    print(final_text)
 
 
 if __name__ == '__main__':
